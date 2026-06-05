@@ -1,16 +1,17 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Deployment
+**배포**
+```bash
+npm install -g firebase-tools
+firebase login
+firebase init
+y
+Hosting: Set up deployments for static web apps
+Use an existing project(firebase 프로젝트가 존재할 경우)
+존재하는 프로젝트 선택
+What do you want to use as your public directory? 나오면 dist 입력
+Configure as a single-page app (rewrite all urls to /index.html)? Y 입력
+Set up automatic builds and deploys with GitHub? (Y/n) 깃허브 CI/CD 할거면 Y 아니면 N
+File dist\index.html already exists. Overwrite? N 입력
+Would you like to install agent skills for Firebase? 불 필요하니까 N 입력
+npm run build && firebase deploy
+```
