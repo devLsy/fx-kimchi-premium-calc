@@ -2,7 +2,7 @@
 
 실시간 자산 프리미엄(김치 프리미엄) 트래킹을 위한 트레이딩 보조 엔진입니다.
 국내(Upbit)와 해외(Binance) 거래소의 시세 차이를 실시간으로 계산하여, 아비트리지(차익거래) 타점을 확인하는 데 최적화되어 있습니다.
-<img src="https://github.com/user-attachments/assets/795b5032-4cbd-4e89-8f70-7d9a13f537e7" width="300" alt="FX-KIMCHI ENGINE UI">
+<img src="https://github.com/user-attachments/assets/795b5032-4cbd-4e89-8f70-7d9a13f537e7" width="400" alt="FX-KIMCHI ENGINE UI">
 
 ## 🚀 Key Features
 
