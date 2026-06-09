@@ -1,3 +1,35 @@
+# FX-KIMCHI ENGINE
+
+실시간 자산 프리미엄(김치 프리미엄) 트래킹을 위한 트레이딩 보조 엔진입니다.
+국내(Upbit)와 해외(Binance) 거래소의 시세 차이를 실시간으로 계산하여, 아비트리지(차익거래) 타점을 확인하는 데 최적화되어 있습니다.
+
+## 🚀 Key Features
+
+* **실시간 데이터 동기화**: 3초 간격으로 시세 데이터를 병렬 호출하여 최신 프리미엄 수치 산출.
+* **최적화된 아키텍처**: 
+    * 데이터 통신 로직(`useMarketData` 훅)과 UI 분리.
+    * 환율 갱신 주기(30분)와 시세 갱신 주기(3초) 분리로 API 호출 효율 최적화.
+* **트레이딩 환경 특화 UI**: 다크 테마 기반의 대시보드 레이아웃으로 시각적 피로도 최소화 및 핵심 데이터 직관성 극대화.
+
+## 🛠 Tech Stack
+
+* **Frontend**: React, Tailwind CSS
+* **API**: 
+    * Upbit Ticker API
+    * Binance Price API
+    * ExchangeRate-API (LIVE FX)
+
+## ⚙️ How to Run
+
+이 프로젝트는 로컬 환경에 최적화되어 있습니다.
+
+1. **클론 및 설치**:
+   ```bash
+   git clone [레포지토리 주소]
+   cd [프로젝트 폴더명]
+   npm install
+   ```
+   
 ## 📦 Deployment
 **배포**
 ```bash
