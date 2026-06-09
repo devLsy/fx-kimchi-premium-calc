@@ -4,12 +4,15 @@ import { PremiumCard } from './components/PremiumCard';
 import { PriceCard } from './components/PriceCard'; 
 import { Header } from './components/Header'; 
 import { CoinSelector } from './components/CoinSelector'; 
+import { AddCoinForm } from './components/AddCoinForm'; 
 
 const COIN_LIST = [
   { id: 'BTC', name: '비트코인 (BTC)', upbit: 'KRW-BTC', binance: 'BTCUSDT' },
   { id: 'ETH', name: '이더리움 (ETH)', upbit: 'KRW-ETH', binance: 'ETHUSDT' },
   { id: 'DOGE', name: '도지코인 (DOGE)', upbit: 'KRW-DOGE', binance: 'DOGEUSDT' },
   { id: 'ADA', name: '에이다 (ADA)', upbit: 'KRW-ADA', binance: 'ADAUSDT' },
+  { id: 'SOL', name: '솔라나 (SOL)', upbit: 'KRW-SOL', binance: 'SOLUSDT' },
+  { id: 'XRP', name: '리플 (XRP)', upbit: 'KRW-XRP', binance: 'XRPUSDT' },
 ];
 
 function App() {
