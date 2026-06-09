@@ -35,7 +35,7 @@ function App() {
             <PremiumCard rate={kimchiPremium} />    
             <div className="grid grid-cols-2 gap-4">
               <PriceCard title="UPBIT (KRW)" value={domesticPrice} />
-              <PriceCard title="BINANCE (USD)" value={foreignPrice} isCurrency />
+              <PriceCard title="BINANCE (USDT)" value={foreignPrice} isCurrency />
             </div>
             <div className="bg-slate-900/30 p-5 rounded-2xl border border-slate-800/50 flex justify-between items-center">
               <span className="text-[10px] text-slate-500 font-bold tracking-widest uppercase">Live FX Rate</span>
