@@ -29,6 +29,7 @@
    git clone [레포지토리 주소]
    cd [프로젝트 폴더명]
    npm install
+   npm run dev
    ```
    
 ## 📦 Deployment
