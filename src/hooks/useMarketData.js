@@ -6,6 +6,11 @@ export const useMarketData = (selectedCoin) => {
     foreignPrice: 0,
     exchangeRate: 1400, 
     loading: true,
+    error: {
+      upbit: false,
+      binance: false,
+      message: null
+    }
   });
 
   // 1. 환율 업데이트 (긴 주기)
@@ -26,22 +31,41 @@ export const useMarketData = (selectedCoin) => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const [upbitRes, binanceRes] = await Promise.all([
+        const results = await Promise.allSettled([
           // 업비트 시세
           fetch(`https://api.upbit.com/v1/ticker?markets=${selectedCoin.upbit}`),
           // 바이낸스 시세
           fetch(`https://api.binance.com/api/v3/ticker/price?symbol=${selectedCoin.binance}`)
         ]);
-        const upbit = await upbitRes.json();
-        const binance = await binanceRes.json();
+
+        const upbitRes = results[0];
+        const binanceRes = results[1];
+
+        const upbitOk = upbitRes.status === 'fulfilled' && upbitRes.value.ok;
+        const binanceOk = binanceRes.status === 'fulfilled' && binanceRes.value.ok;
         
+        const upbitData = upbitOk ? await upbitRes.value.json() : null;
+        const binanceData = binanceOk ? await binanceRes.value.json() : null;
+
         setData(prev => ({
-          ...prev,
-          domesticPrice: upbit[0].trade_price,
-          foreignPrice: parseFloat(binance.price),
-          loading: false
+              ...prev,
+              domesticPrice: upbitData ? upbitData[0].trade_price : prev.domesticPrice,
+              foreignPrice: binanceData ? parseFloat(binanceData.price) : prev.foreignPrice,
+              error: {
+                upbit: !upbitOk,
+                binance: !binanceOk,
+                message: (!upbitOk || !binanceOk) ? "일부 데이터 수신 실패" : null
+              },
+              loading: false
         }));
-      } catch (e) { console.error(e); }
+      } catch (e) { 
+        console.error("전체 시세 호출 실패:", e);
+        setData(prev => ({ 
+          ...prev, 
+          loading: false, 
+          error: { upbit: true, binance: true, message: "네트워크 오류" } 
+        }));
+      }
     };
 
     fetchPrices();
