@@ -16,8 +16,6 @@ const COIN_LIST = [
 
 function App() {
   const [selectedCoin, setSelectedCoin] = useState(COIN_LIST[0]);
-  const { domesticPrice, foreignPrice, exchangeRate, loading } = useMarketData(selectedCoin);
-
   const data = useMarketData(selectedCoin);
 
   const convertedForeignPrice = data.foreignPrice * data.exchangeRate;
