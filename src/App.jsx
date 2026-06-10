@@ -12,6 +12,10 @@ const COIN_LIST = [
   { id: 'ADA', name: '에이다 (ADA)', upbit: 'KRW-ADA', binance: 'ADAUSDT' },
   { id: 'SOL', name: '솔라나 (SOL)', upbit: 'KRW-SOL', binance: 'SOLUSDT' },
   { id: 'XRP', name: '리플 (XRP)', upbit: 'KRW-XRP', binance: 'XRPUSDT' },
+  { id: 'AVAX', name: '아발란체 (AVAX)', upbit: 'KRW-AVAX', binance: 'AVAXUSDT' },
+  { id: 'LINK', name: '체인링크 (LINK)', upbit: 'KRW-LINK', binance: 'LINKUSDT' },
+  { id: 'SUI', name: '수이 (SUI)', upbit: 'KRW-SUI', binance: 'SUIUSDT' },
+  { id: 'SEI', name: '세이 (SEI)', upbit: 'KRW-SEI', binance: 'SEIUSDT' },
 ];
 
 function App() {
